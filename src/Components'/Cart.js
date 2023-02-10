@@ -157,7 +157,7 @@ function Cart() {
        {
         data.length>0?<div className='mt-10 flex justify-center'>
        <button className='btn bg-green-500 p-2 rounded-md shadow-lg outline-none border-none text-white ' onClick={()=>{
-          toast("successfully placed order")
+          toast.success("successfully placed order")
           setTimeout(()=>{
             window.location.href="/"
           },3000)
