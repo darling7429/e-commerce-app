@@ -45,9 +45,9 @@ loadcart()
        
         
         const resp=await delete_Product(id)
-        loadcart()
+       
     
-    // window.location.reload()
+    window.location.reload()
          
        
         
