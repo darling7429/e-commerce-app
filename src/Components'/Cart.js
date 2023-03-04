@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { cart_data } from '../Apis/Api';
 import { delete_Product } from '../Apis/Api';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 import { ShoppingCartOutlined, Search, AppRegistrationOutlined, LoginOutlined } from '@mui/icons-material'
 
 function Cart() {
+    const Navigate=useNavigate()
     var total=0;
     const[cart_total,setcart_total]=useState()
     const Token=localStorage.getItem("Token")
@@ -17,6 +19,10 @@ function Cart() {
        
        
     }
+    useEffect(()=>{
+loadcart()
+    },[data])
+
     useEffect(()=>{
      loadcart()
       total_cart()
@@ -39,8 +45,9 @@ function Cart() {
        
         
         const resp=await delete_Product(id)
+        loadcart()
     
-    window.location.reload()
+    // window.location.reload()
          
        
         
@@ -48,6 +55,7 @@ function Cart() {
   
 
   return (<>
+  <div className=''>
   <div className='parent mt-2 shadow-xl  '>
          <div className='flex justify-around h-[50px] items-center  pb-[20px] pt-[10px] '>
             <div className='flex left items-center space-x-6 '>
@@ -146,10 +154,12 @@ function Cart() {
     </div>
     :<>
     <div className='flex justify-center items-center space-x-10  h-[50vh]'>
-    <p >
-        "NO products are added goto home and come back"</p>
+    <p  className='w-[200px] h-[100px]'>
+        <img src="https://thumbs.gfycat.com/MenacingOrneryCaimanlizard-size_restricted.gif" className='w-full h-full rounded-lg shadow-lg'/></p>
+        <p className='text-2xl font-bold text-red-500'>'No Products available Add products and Come Back'</p>
         <button className='btn bg-orange-500 p-2 rounded-lg text-white  shadow-lg' onClick={()=>{
-            window.location.href="/Products"
+            Navigate("/Products")
+           // window.location.href="/Products"
         }}>Add products</button>
         </div>
         
@@ -164,6 +174,7 @@ function Cart() {
        }}>Place Order</button>
        </div>:null
        }
+       </div>
        
   </>
    

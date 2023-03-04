@@ -9,7 +9,7 @@ import { cart_add } from '../Apis/Api'
 
 
 function Individual() {
-  const navigate=useNavigate()
+  const Navigate=useNavigate()
   const Location=useLocation()
   const data=Location.state.item
 
@@ -31,11 +31,12 @@ function Individual() {
     onClick={()=>{
       window.location.href="/cart_feed"
     }} /> <span className='-ml-2'>{carts.length}</span></p></p>:<button onClick={()=>{
-      window.location.href="/cart_feed"
+      Navigate("/cart_feed")
+      // window.location.href="/cart_feed"
     }} className='bg--gray-700'><ShoppingCartIcon  className='hover:cursor'/>View cart</button> }
     <button className='btn bg-white text-black rounded-lg shadow-lg p-2' onClick={()=>{
       
-      navigate("/products")
+      Navigate("/products")
 
     }}>
       Home</button></p>

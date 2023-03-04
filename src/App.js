@@ -9,12 +9,14 @@ import Dummy_Products from './Components\'/Dummy_Products'
 function App() {
   return (
     <>
+    <div >
     <Announcement/>
     <Nav/>
     <Home/>
     <Dummy_Products/>
     <Feedback/>
     <Footer/>
+    </div>
     </>
     
   )

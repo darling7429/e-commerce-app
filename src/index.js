@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Login from './Components\'/Login';
 import { createBrowserRouter, Navigate, RouterProvider} from "react-router-dom";
+
 import Signup from './Components\'/Signup';
 import Individual from './Components\'/Individual';
 import Cart from './Components\'/Cart';
@@ -27,7 +28,8 @@ const Router=createBrowserRouter([
 },{
   path:"/Products",
   element:Token?<Products/>:<Login/>
-},{
+},
+{
   path:"/products/individual/:id/:name",element:<Individual/>
 },{
   path:"/cart_feed",element:<Cart/>

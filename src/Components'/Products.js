@@ -46,7 +46,8 @@ Navigate(`/products/individual/${item.id}/${item.title}`, {state:{item}})
 
   return (
   
-   <>
+   < >
+   <div >
    
    <div className='bg-gray-200 flex justify-around p-2'>
    <div className='w-[200px] h-[30px] flex hover:cursor-pointer  '>
@@ -111,7 +112,7 @@ Navigate(`/products/individual/${item.id}/${item.title}`, {state:{item}})
     </div>
     
    
-    
+    </div>
     
     </>
    

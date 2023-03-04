@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import {Login_api} from "../Apis/Api"
 import { ToastContainer, toast } from 'react-toastify';
+
 import { ShoppingCartOutlined, Search, AppRegistrationOutlined, LoginOutlined } from '@mui/icons-material'
 import * as yup from "yup";
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 const Token=localStorage.getItem("Token")
 
 
@@ -21,6 +23,8 @@ const schema = yup.object({
 
 
 function Login() {
+  const Navigate=useNavigate();
+
   const[loading,setloading]=useState(false)
     const { register, handleSubmit, formState: { errors } } = useForm({
 		resolver: yupResolver(schema)
@@ -43,12 +47,14 @@ function Login() {
        if(response.status===200)
        
        {
-        toast.success("successful login")
+        //toast.success("successful login")
         localStorage.setItem("Cart_id",response.data.cart_id);
-        localStorage.setItem("Token",response.data.token)
-        setTimeout(()=>{
-          window.location.href="/Products"
-        },6500)
+        localStorage.setItem("Token",response.data.token);
+        Navigate("/Products")
+      
+
+       window.location.href=
+       '/Products'
 
         
         

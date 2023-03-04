@@ -35,7 +35,8 @@ export const Login_api=async (data)=>{
 export const load=async ()=>{
     const response=await axios({
         url:"https://webla-api.uc.r.appspot.com/api/v1/products",
-        method:'GET',headers:{
+        method:'GET',
+        headers:{
             "X-Authorization": `Bearer ${Token}`
         },params:{
             per_page: 25,
