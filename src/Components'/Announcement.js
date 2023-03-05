@@ -10,7 +10,7 @@ function Announcement() {
   return (
     <>
     <div className='bg-red-500 text-white capitalize h-[30px] text-center items-center '>
-note:-Please install cors plugin 
+Note:-Please install cors plugin 
 
     </div>
     
