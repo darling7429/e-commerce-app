@@ -6,7 +6,9 @@ const Token=localStorage.getItem("Token")
 
 function Navbar() {
   return (
-    <div className='parent mt-2 shadow-xl  '>
+    <>
+    
+     <div className='parent mt-2 shadow-xl  '>
          <div className='flex justify-around h-[50px] items-center  pb-[20px] pt-[10px] '>
             <div className='flex left items-center space-x-6 '>
                 <div className='w-[250px] h-[30px] flex justify-center  items-center  '>
@@ -54,6 +56,8 @@ function Navbar() {
 
         </div>
     </div>
+    </>
+   
   )
 }
 
